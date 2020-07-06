@@ -1,0 +1,189 @@
+
+<html>
+	<head>
+		<title>Overflow by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/Users/lukemyers/Desktop/skytracker.blog.p2/public/css/style.css" />
+    <!-- <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript> -->
+</head>
+	<body class="is-preload">
+		
+		<div id="map"></div>
+
+		
+<!-- Banner -->
+<section id="banner">
+	
+	<h1>Welcome to SkyTrack</h1>
+			<div></div>
+			<div></div>
+			<div></div>
+	<div id="container">
+		<h3>Current location of the International Space Station</h3>
+		<h5>(Updates every 10 seconds)</h5>
+		<br>
+	</div>
+		<p>A brand new App designed by <a href="https://www.linkedin.com/in/luke-myers-5176022a/">Luke</a> <br/> We are able to keep track on many things in our lives from the time to the weather.<br />
+		But very few of us have been able to keep track of what is going on in space, untill now.<br />
+		With the help of Skytrac you can keep track of the weather on Mars, the location of <br /> the Internatinal Space Station and get pictures of space on a daily basis.</p>
+</section>
+
+
+<ul class="li">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+		
+<!-- Map BOX Script -------------  -->
+<script>
+	mapboxgl.accessToken = '<%= mapkey %>'
+	var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v11',
+		center: ['<%= match.center[0] %>', '<%= match.center[1] %>'],
+		zoom: 12
+	})
+	var geojson = {
+		type: 'FeatureCollection',
+		features: [{
+			type: 'Feature',
+			geometry: {
+				type: 'Point',
+				coordinates: ['<%= match.center[0] %>', '<%= match.center[1] %>'],
+			},
+			properties: {
+				title: 'Mapbox',
+				description: 'Mapbox element'
+			}
+		}]
+	}
+	geojson.features.forEach(marker => {
+		var el = document.createElement('img')
+		el.className = 'marker'
+		el.src = '/Users/lukemyers/Desktop/skytracker.blog.p2/public/ISS-sm.png'
+		el.style.width = '3vw'
+		// ISS Tracker for MAPBox -----------------------------------------
+		map.addSource('iss', { type: 'geojson', data: url });
+		  map.addLayer({
+					"id": "iss",
+					"type": "symbol",
+					"source": "iss",
+					"layout": {
+						"icon-image": "rocket-15"
+		  }
+		});
+		new mapboxgl.Marker(el)
+		.setLngLat(marker.geometry.coordinates)
+		.addTo(map)
+	})
+
+	// ISS click on map and FLY to ISS --------------------------------------
+	  map.addControl(new mapboxgl.FullscreenControl());
+	  document.getElementById('locate').addEventListener('click', function(e) {
+		  var lastSeenLocaton = JSON.parse(this.getAttribute('data-coordinate'));
+		  map.flyTo({
+			  center: lastSeenLocaton
+	});
+});
+
+</script>
+	<ul class="li">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<header>
+		<h2>Articles of the Universe</h2>
+		<p>Learn and Share wonder of<br />
+		 space everyday.</p>
+	</header>
+  <section class="share">
+	<% articles.forEach(function(a) { %>
+	  <div class="well">
+		<h2>
+		  <a href="/articles/<%= a.id %>"><%= a.title %></a>
+		</h2>
+		<p>
+		  <strong><%= moment(a.createdAt).calendar() %></strong>
+		</p>
+	  </div>
+	<% }) %> 
+	
+</section>
+
+
+<!-- Blog or Picture Area -->
+<article class="article">
+	<header>
+		<h2>Pictures of the Universe</h2>
+		<p>See the wonder and beauty of<br />
+		deep space everyday.</p>
+	</header>
+</article>
+			<div class="gallery">
+			<div class="picture"><a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" alt="" title="Cherish" /></a></div>
+			<div class="picture"><a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" alt="" title="Different." /></a></div>
+			<div class="picture"><a href="images/fulls/07.jpg" class="image fit"><img src="images/thumbs/07.jpg" alt="" title="History was made here" /></a></div>
+			<div class="picture"><a href="images/fulls/08.jpg" class="image fit"><img src="images/thumbs/08.jpg" alt="" title="People come and go and walk away" /></a></div>
+			<div class="picture"><a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" alt="" title="Ad infinitum" /></a></div>
+			<div class="picture"><a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" alt="" title="Dressed in Clarity" /></a></div>
+			<div class="picture"><a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" alt="" title="Raven" /></a></div>
+			<div class="picture"><a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" alt="" title="I'll have a cup of Disneyland, please" /></a></div> 
+			<div class="picture"><a href="images/fulls/08.jpg" class="image fit"><img src="images/thumbs/08.jpg" alt="" title="People come and go and walk away" /></a></div>
+
+	</body>
+<footer id="footer">@Luke Myers 2020</footer>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

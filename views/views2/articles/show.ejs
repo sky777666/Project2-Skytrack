@@ -1,0 +1,14 @@
+
+<section class="articles">
+
+      <h1><%= article.title %> <small>by <%= article.author.getFullName() %></small></h1>
+
+      <p>
+        <strong><%= moment(article.createdAt).calendar() %></strong>
+      </p>
+
+      <p><%= article.content %></p>
+</section>
+      <hr />
+ 
+<a href="/">&larr; Back Home</a>
