@@ -3,14 +3,14 @@ let db = require('../models')
 let router = express.Router()
 
 // POST /articles - create a new post
-router.post('/', (req, res) => {
+router.post('/main', (req, res) => {
   db.article.create({
     title: req.body.title,
     content: req.body.content,
     authorId: req.body.authorId
   })
   .then((post) => {
-    res.redirect('/')
+    res.redirect('/main')
   })
   .catch((error) => {
     res.status(400).render('main/404')

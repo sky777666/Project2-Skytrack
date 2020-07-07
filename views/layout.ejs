@@ -3,24 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auth Boilerplate</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        #map { position: absolute; top: 35%; bottom: 0; left: 53%; width: 35%; height: 55%;};
+    </style>
+    <title>SkyTracker</title>
 </head>
 <body>
     <header>
         <nav>
             <% if (currentUser) { %>
-                <a href="/auth/logout">Logout</a>
-                <a href="/profile">Profile</a>
+                <nav class="navbar navbar-default" role="navigation">
+                      <div class="navBar">
+                        <ul class="list">
+                            <li class="nav"> <a class="navbar-brand" href="/">SKYTRACK</a></li>
+                            <li class="nav"> <a href="/main">HOME</a></li>
+                            <li class="nav"> <a href="/profile">PROFILE</a></li>
+                            <li class="nav"><a href="/auth/logout">LOGOUT</a></li>
+                          <li class="nav"><a href="/authors">MEMBERS</a></li>
+                          <li class="nav"><a href="/articles/new">POST PICTURES</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                </nav>
             <% } else { %>
-                <a href="/auth/register">Register</a>
-                <a href="/auth/login">Login</a>
-                <% } %>
+                <a href="/auth/register">REGISTER</a>
+                <a href="/auth/login">LOGIN</a>
+
+            <% } %>
         </nav>
     </header>
 <div class="container">
-    <h1>Authenticating Users 🐳 </h1>
+   
     <%- body %>
-</div>
-
+</div> 
+ <!-- jQuery -->
+ <script src="//code.jquery.com/jquery.js"></script>
+ <!-- Bootstrap JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+ <script type="text/javascript" src="/js/app.js"></script>
 </body>
 </html>
+
+
+
+

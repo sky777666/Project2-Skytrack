@@ -1,0 +1,253 @@
+
+h1 h2{
+  text-align: center;
+}
+
+#map{
+  
+	height: 300px;
+	width: 500px;
+  position: absolute; 
+  /* display: flex; 
+  justify-content: center;  */
+	top:75%;
+  left: 33%;
+  }
+
+  #map:hover{
+    -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+        transform: scale(1.4);
+        transition-duration: 2s;
+  }
+
+
+
+.nav {
+  margin: 0 auto;
+  display: inline;
+  font-weight: bold;
+  color: white;
+  border: 1px;
+  padding: 5px;
+}
+
+.nav a {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+
+ .container2 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+} 
+
+.article {
+	text-align: center;
+	text-emphasis: none;
+  font-size: medium;
+}
+
+
+
+#header{
+	position: absolute;
+	top:50%;
+	left: 33%;
+}
+
+
+body {
+  text-align: center;
+  color: darkblue;
+   background:url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/26fd6cf1-cbf9-4270-b2b3-b1abcd7762f4/d63kxbv-009e158c-90b0-48f5-a678-9176ec383dbb.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMjZmZDZjZjEtY2JmOS00MjcwLWIyYjMtYjFhYmNkNzc2MmY0XC9kNjNreGJ2LTAwOWUxNThjLTkwYjAtNDhmNS1hNjc4LTkxNzZlYzM4M2RiYi5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.uA84y57sPDGXawreOstS9bm0C8fbN5qf-lyHY4jIEfI)no-repeat center fixed; 
+  -webkit-background-size: cover; 
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} 
+
+.li {
+ color: darkgray;
+ size: .2px;
+ opacity: .01;
+}
+
+.well {
+  width: 400px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  background-color: lightgray
+}
+
+.share {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+ 
+}
+
+.share2{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: space-between;
+  justify-content: space-around;
+  margin: 3%;
+
+}
+
+.btn-primary  {
+height: 50px;
+width: 100px;
+}
+
+
+.fitText {
+  text-align: center;
+  font-size: 25.5vw;
+}
+
+
+nav:hover{
+color: black;
+font-weight: bold;
+}
+
+/* Banner */
+
+#banner {
+  position: relative;
+  color: darkblue;
+  text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
+  text-align: center;
+  background: #35b88f url("/Users/lukemyers/Desktop/skytracker.blog.p2/public/images/banner.svg") bottom center no-repeat;  
+  padding: 5em 0 5em 0;
+  margin: 0;
+  background-size: 125% auto;
+  opacity: 1;
+  
+}
+
+
+ #banner:hover {
+  opacity:.7;
+ }
+
+/* ---------------------------- */
+
+.gallery{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+
+.picture{
+  padding: 5px;
+}
+
+
+  #header header {
+    display: inline-block;
+    padding: 0 0 4.5em 0;
+  }
+
+    #header header h1 {
+      font-weight: 600;
+      font-size: 2em;
+      letter-spacing: 10px;
+    }
+
+    #footer {
+      position:fixed;
+      left:0px;
+      bottom:0px;
+      height:30px;
+      width:100%;
+      background:#999;
+   }
+
+
+   /*  REGISTRATION LOGIN FORM --------  */
+
+
+   #form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+  }
+
+
+   @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+ .login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+} 
+ .form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+} 
+
+.form button:hover{ 
+   background: #43A047; 
+}
