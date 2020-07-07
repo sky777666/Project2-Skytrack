@@ -4,13 +4,12 @@ h1 h2{
 }
 
 #map{
-  
 	height: 300px;
 	width: 500px;
   position: absolute; 
   /* display: flex; 
   justify-content: center;  */
-	top:75%;
+	top:78%;
   left: 33%;
   }
 
@@ -51,21 +50,28 @@ h1 h2{
   color: white;
 }
 
-
-
  .container2 {
   display: flex;
   justify-content: center;
   align-content: center;
 } 
 
-.article {
-	text-align: center;
-	text-emphasis: none;
-  font-size: medium;
+
+.articles{
+  padding: 100px;
+  text-align: center;
+  width: 100%;
+  font-size: large;
+  position: relative;
+}  
+
+.articles2{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+  font-size: large;
 }
-
-
 
 #header{
 	position: absolute;
@@ -186,7 +192,7 @@ font-weight: bold;
     }
 
     #footer {
-      position:fixed;
+      
       left:0px;
       bottom:0px;
       height:30px;
@@ -203,7 +209,6 @@ font-weight: bold;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
   }
 
 
@@ -248,6 +253,34 @@ font-weight: bold;
   cursor: pointer;
 } 
 
-.form button:hover{ 
-   background: #43A047; 
+.btn:hover{ 
+   background: lightseagreen
+}
+
+
+.form-control2{
+width: 250px;
+height: 100px;
+text-align: center;
+}
+
+/* Log in Automatic video play for Welcome login */
+.viewport-header {
+  position: relative;
+  height: 10vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.video{
+  object-fit: cover;
+  background-size: cover;
+  width: 150vw;
+  height: 150vh; 
+  position: fixed;
+  top: 0;
+  left: 0;
 }
