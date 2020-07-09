@@ -103,7 +103,8 @@ body {
   flex-direction: column;
   justify-content: center; 
   align-items: center;
-  background-color: lightgray
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRaHG22FpZGvMbiP9BQCK2AepcCr2env5ekmA&usqp=CAU)
+  
 }
 
 .share {
@@ -191,17 +192,42 @@ font-weight: bold;
       letter-spacing: 10px;
     }
 
+
+
+    /* FOOTER ------------------- */
+
     #footer {
-      
+      margin: 0 auto;
       left:0px;
       bottom:0px;
-      height:30px;
+      height:50px;
       width:100%;
-      background:#999;
+      background:#999; 
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      color: black;
    }
 
 
-   /*  REGISTRATION LOGIN FORM --------  */
+ion-icon {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+
+}
+
+ion-icon:hover{
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+      transform: scale(1.5);
+      transition-duration: 1s;
+}
+
+
+   /*  REGISTRATION LOGIN FORMS & BUTTONS-------------------  */
 
 
    #form {
@@ -255,6 +281,10 @@ font-weight: bold;
 
 .btn:hover{ 
    background: lightseagreen
+}
+
+button:hover {
+  background: lightseagreen;
 }
 
 

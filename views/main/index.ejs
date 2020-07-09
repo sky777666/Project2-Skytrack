@@ -5,7 +5,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/style.css" />
-    <!-- <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript> -->
+	<!-- <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript> -->
+	<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </head>
 	<body class="is-preload">
 			
@@ -126,7 +127,7 @@
 			<% articles.forEach(function(a) { %>
 			  <div class="well">
 				<h2>
-				  <a href="/articles/<%= a.id %>"><%= a.title %></a>
+				  <a href="/articles/<%= a.id %>"><%= a.title %></a>   
 				</h2>
 				<p>
 				  <strong><%= moment(a.createdAt).calendar() %></strong>
@@ -141,7 +142,10 @@
 
 
 	</body>
-<footer id="footer">@Luke Myers 2020</footer>
+<footer id="footer">@Luke Myers 2020
+	<a href="https://github.com/sky777666"><ion-icon name="logo-github"></ion-icon></a> 
+	
+</footer>
 </html>
 
 

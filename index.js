@@ -15,6 +15,7 @@ var upload = multer({ dest: './uploads/' });
 const isLoggedIn = require('./middleware/isLoggedIn');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 let request = require('request')
+let icon = require('ionicons')
 const axios = require('axios')
    geojson = require('geojson')
   path = require('path');
@@ -69,7 +70,7 @@ app.use(function(req, res, next) {
 app.use('/auth', require('./controllers/auth'));
 app.use('/authors', require('./controllers/authors'))
 app.use('/articles', require('./controllers/articles'))
-// app.use('/search', require('./controllers/search'))   
+ app.use('/profile', require('./controllers/profile'))   
 
 
 // ROUTES ----AUTHENTICATION This Code must be under app.use req.flash
@@ -139,15 +140,21 @@ app.get('/main', (req, res) => {
     })
   })
 
-app.post('/main/index', upload.single('inputFile'), function(req, res) {
-  cloudinary.uploader.upload(req.file.path, function(result) {
-    var cloudID = result.public_id;
-    console.log(cloudID);
-    var image = "https://res.cloudinary.com/dekzk3kd1/image/upload/v1593115518/" + cloudID + ".jpg";
-    console.log(image);
-    res.render('image', { image: image });
-  });
-});
+// DELETE FOR Articles  
+
+app.delete('/articles/:idx', (req, res) => {
+  let articles = fs.readFileSync('./articles.json')
+  articles = JSON.parse(articles)
+  // Remove the selected article from our "articles" array
+  articles.splice(req.params.idx, 1)
+  // Save over our articles.json with the newly formatted articles array.
+  fs.writeFileSync('./articles.json', JSON.stringify(articles))
+  // Once everything is done, we want to show the user the impact of their actions
+  // by redirecting to the /articles route to see all remaining articles.
+  res.redirect('/articles')
+})
+
+
 });
 
 

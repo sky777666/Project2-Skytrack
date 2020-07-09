@@ -3,14 +3,14 @@ let db = require('../models')
 let router = express.Router()
 
 // POST /articles - create a new post
-router.post('/main', (req, res) => {
+router.post('/', (req, res) => {
   db.article.create({
     title: req.body.title,
     content: req.body.content,
     authorId: req.body.authorId
   })
   .then((post) => {
-    res.redirect('/main')
+    res.redirect('/')
   })
   .catch((error) => {
     res.status(400).render('main/404')
@@ -32,10 +32,10 @@ router.get('/new', (req, res) => {
 router.get('/:id', (req, res) => {
   db.article.findOne({
     where: { id: req.params.id },
-    include: [db.author]
+    include: [db.author, db.comment] // see comments here 
   })
   .then((article) => {
-    if (!article) throw Error()
+    // if (!article) throw Error()
     console.log(article.author)
     res.render('articles/show', { article: article })
   })
@@ -44,6 +44,35 @@ router.get('/:id', (req, res) => {
     res.status(400).render('main/404')
   })
 })
+
+// POST    Comments - add a new COMMENT in the params ------------
+
+router.post('/:id/comments', (req, res) => {
+  let id = req.params.id
+  db.comment.create({
+    name: req.body.name,
+    content:req.body.content,
+    articleId: req.params.id
+  })
+  .then((comments => {
+    res.redirect(`/articles/ ${req.params.id}`)
+  }))
+})
+
+// router.post('/comments/:id', (req, res) => {
+//   db.comments.create({
+//     name: req.body.nameComment,
+//     content: req.body.nameComment
+//     articleId: req.body.articleId
+//   })
+//     .then((post) => {
+//     res.redirect('/')
+//   })
+//   .catch((error) => {
+//     res.status(400).render('main/404')
+//   })
+//   return comments;
+// })
 
 
 module.exports = router

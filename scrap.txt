@@ -8,57 +8,18 @@ article: integer
 
 }
 
-sequelize model:create --name comment --attributes name:string,content:text,articleId:integer
 
 
 
---------------------------------------
-//////////////////////////////////         Setting Up MANY to MANY   Step 1)--------
---------------------------------------
 
 sequelize model:create --name tag --attributes content:string             <<<<< Tags Model
 
 sequelize model:create --name articlesTags --attributes articleId:integer,tagId:integer
 
+sequelize model:create --name comment --attributes name:string,content:text,articleId:integer
+
 // Step 2 = Create assoseations ------------------------------------------------------------------------------
-
-
-
-
 
 
 WORKING ON DELETE ------
 
-
-
-<!-- Delete Article -->
-<!-- 
-<ul>
-  <% authors.forEach((authors, index) => { %>
-  <li><%= article.name %> is a(n) <%= article.type %>
-    <a href="/articles/<%= a.id %>"><%= a.title %></a>
-
-      <!-- <img  src= <%= space.image %> ></img> 
-
-      <form method="POST" action="/articles/<%= index %>/?_method=DELETE">
-          <input type="submit" value="Delete">
-      </form>
-  </li>
-  <% }) %>
-</ul> -->
-
-
-
-<------------- DELETE FOR   index.js   ----------
-
-app.delete('/articles/:idx', (req, res) => {
-    let articles = fs.readFileSync('./articles.json')
-    articles = JSON.parse(articles)
-    // Remove the selected article from our "articles" array
-    articles.splice(req.params.idx, 1)
-    // Save over our articles.json with the newly formatted articles array.
-    fs.writeFileSync('./articles.json', JSON.stringify(articles))
-    // Once everything is done, we want to show the user the impact of their actions
-    // by redirecting to the /articles route to see all remaining dinosaurs.
-    res.redirect('/articles')
-})

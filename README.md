@@ -24,6 +24,15 @@ Authentication (4)
 3. /Register
 4. /login
 
+Map-Box (2)
+ 1. App.get / main
+ 2. get /images/mapbox.ISS.Icon
+
+ 
+ Journal Post   (8)
+
+
+ Total Routes 11.
 
 | Method | Path | Purpose |
 | ------ | -------------- | -------------------------------- |
