@@ -23,3 +23,4 @@ sequelize model:create --name comment --attributes name:string,content:text,arti
 
 WORKING ON DELETE ------
 
+<!-- <p><%= article.comments[0].content %></p>  -->

@@ -24,12 +24,27 @@
   </div>
 </div>
 
+
+
+
+
+<% article.comments.forEach(comment => { %>
+  <div class="well">
+    <p><%= comment.content %></p>
+  </div>
+<% }) %>  
+
+
+
+
+
+
 <h1> Create a Comment ! </h1>
 
 <h1>Please comment here. </h1>
 <div class="login-page">
   <div class="form">
-    <form action="/articles/<%= article.id %> /comments" method="POST">
+    <form action="/articles/<%= article.id %>/comment" method="POST">
       <div class="form-group">
         <label for="name"> Name</label>
         <input type="text" class="form-control" id="name" name="name" required>

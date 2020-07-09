@@ -47,7 +47,7 @@ router.get('/:id', (req, res) => {
 
 // POST    Comments - add a new COMMENT in the params ------------
 
-router.post('/:id/comments', (req, res) => {
+router.post('/:id/comment', (req, res) => {
   let id = req.params.id
   db.comment.create({
     name: req.body.name,
@@ -55,7 +55,7 @@ router.post('/:id/comments', (req, res) => {
     articleId: req.params.id
   })
   .then((comments => {
-    res.redirect(`/articles/ ${req.params.id}`)
+    res.redirect(`/articles/${id}`)
   }))
 })
 

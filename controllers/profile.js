@@ -53,8 +53,13 @@ router.post('/profile', upload.single('inputFile'), function(req, res) {
       //     message: "failure",
       //     e,
       //   });
-      // })
+//       // })
 
+// // 2) Retrive Image
+// app.get("/retrieve-image/:cloudinary_id", (request, response) => {
+//   // data from user
+//   const { cloudinary_id } = request.params;
 
+// });
 
 module.exports = router
