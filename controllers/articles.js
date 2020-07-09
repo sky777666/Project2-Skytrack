@@ -59,20 +59,20 @@ router.post('/:id/comment', (req, res) => {
   }))
 })
 
-// router.post('/comments/:id', (req, res) => {
-//   db.comments.create({
-//     name: req.body.nameComment,
-//     content: req.body.nameComment
-//     articleId: req.body.articleId
-//   })
-//     .then((post) => {
-//     res.redirect('/')
-//   })
-//   .catch((error) => {
-//     res.status(400).render('main/404')
-//   })
-//   return comments;
-// })
+// DELETE FOR Articles  
 
+router.delete('/:id/comment', (req, res) => {
+  let id = req.params.id
+  db.comment.delete({
+    name: req.body.name,
+    content:req.body.content,
+    articleId: req.params.id
+  })
+  .then((comments => {
+    res.redirect(`/articles/${id}`)
+  }))
+})
+
+  
 
 module.exports = router

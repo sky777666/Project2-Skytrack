@@ -21,6 +21,27 @@ sequelize model:create --name comment --attributes name:string,content:text,arti
 // Step 2 = Create assoseations ------------------------------------------------------------------------------
 
 
-WORKING ON DELETE ------
+WORKING ON DELETE ----WORKING CODE ejs--
 
 <!-- <p><%= article.comments[0].content %></p>  -->
+
+
+
+
+<!-- DELETE    -->
+<!-- Delete a COMMENT -->
+<!-- <div class="login-page">
+  <div class="form">
+    <ul>
+      <li><%= article.id %>  <%= comment[0] %>
+         <a href="/articles/<%= article.id %>"><%= article.title %></a> 
+          <form method="DELETE" action="/articles/<%= article.id %>/comment.?_method=DELETE">
+              <input type="submit" value="Delete">
+          </form>
+      </li>
+    </ul> 
+      <button type="button"><a href="/">&larr; Back Home</a></button>
+  </div>
+</div>
+ -->
+

@@ -139,22 +139,6 @@ app.get('/main', (req, res) => {
       res.status(400).render('main/404')
     })
   })
-
-// DELETE FOR Articles  
-
-app.delete('/articles/:idx', (req, res) => {
-  let articles = fs.readFileSync('./articles.json')
-  articles = JSON.parse(articles)
-  // Remove the selected article from our "articles" array
-  articles.splice(req.params.idx, 1)
-  // Save over our articles.json with the newly formatted articles array.
-  fs.writeFileSync('./articles.json', JSON.stringify(articles))
-  // Once everything is done, we want to show the user the impact of their actions
-  // by redirecting to the /articles route to see all remaining articles.
-  res.redirect('/articles')
-})
-
-
 });
 
 

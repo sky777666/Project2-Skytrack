@@ -14,7 +14,6 @@
 1. MapBox
 2. NASA ISS Tracker Api
 3. Cloudinary Photo's Upload Api
-4. 
 
 
 ### Routes
@@ -24,15 +23,17 @@ Authentication (4)
 3. /Register
 4. /login
 
-Map-Box (2)
+
+ Cloudinary (1)
+ 1. App.get /profile
+ 
+
+  Map-Box (2)
  1. App.get / main
  2. get /images/mapbox.ISS.Icon
 
  
- Journal Post   (8)
-
-
- Total Routes 11.
+ Journal Post Routes  (9)
 
 | Method | Path | Purpose |
 | ------ | -------------- | -------------------------------- |
@@ -44,6 +45,10 @@ Map-Box (2)
 | POST | `/articles` | creates a new article, then redirects back to `GET /` |
 | GET | `/articles/new` | page that has a form for creating a new article |
 | GET | `/articles/:id` | page that shows a specific article and the author |
+| POST| `'/:id/comment',`| Post a comment on the articles show page
+
+ Total Routes 16.
+  Total Controllers 4 ( Articles, Auth, Authors, Profile)
 
 #### Models
   
@@ -53,28 +58,17 @@ Map-Box (2)
   * `article`
     * Attributes: `title`, `content`, `authorId`
     * Associations: Belongs to one author
+  * `comments`
+    * Attributes: `name`, `comment`, `articleId`
+    * Associations: Belongs to one article
 
 ## User Stories
 
-* As a user, I want to comment on an article in order to express my opinions.
+* As a user, I want to write journal comments about the ISS and space. 
+* As a user, I want to write a comment on a public Journal Article in order to express my opinions.
 * As a user, I want to view comments on an article in order to see my community's opinions about an article.
-Map-Box (2)
- 1. App.get / Home
- 2. /images/mapbox.ISS.Icon
+* As a user, I want to view pictures of space and get the live location of the ISS. 
 
- Cloudinary (2)
- 1. App.get / home
- 2. App.post / render
- 
-
- Picture Upload and Comment (5)
- 1. Router Post / home/userId/
- 2. Router Get   /New
- 3. Router Get   /:id
- 4. pictures    /show
- 5. router Post /id/comments
-
- Total Routes 13. 
 
 
 ## :memo: Getting Started
@@ -85,26 +79,24 @@ Map-Box (2)
 - [x] Create Wire Frame
 - [x] Create E.R.D
 - [x] Make list of Routes, NPM files and Backend Requirments. 
-- [x] Make and Show Posts
+- [x] Make and Show Journal Posts
 - [x] Comment on Space posts
 - [x] Show Mapbox
 - [x] Style
-- [ ] Get ISS API and Connect to MapBox Api
-- [ ] Login Authentication connect to app routes
-- [ ] Attach pictures to main page from the Cloudinary APi
-- [ ] Delete Pictures
+- [x] Get ISS API and Connect to MapBox Api
+- [x] Login Authentication connect to app routes
+- [x] Attach pictures to main page from the Cloudinary APi
+
 :rocket: 
 
 
+### Routes: Application file layout
 
-
-
-### Routes: Backend Data
-
-- [x] Articles: Title(string), content(text), Author id.
-- [x] Comment: name(string), content(text) ArticleId
-- [x] User ( Authentication)
-
+1. DB / PSQL  to sequelize
+2. Migrations and Models
+3. index.js for all requirments and main route
+4. Controllers and attached functions and Routes to Templating views.ejs
+5. Public folder to hold css style, pictures ect. 
 
 
 
@@ -114,20 +106,6 @@ Map-Box (2)
 :::
 
 > Drag-n-drop image from your file system to the editor to paste it!
-
-
-
-
-
-### Code Examples
-
-
-- Code block with color and line numbers show some code like this：
-```javascript=16
-var s = "JavaScript syntax highlighting";
-alert(s);
-.
-```
 
 
 

@@ -1,5 +1,5 @@
 
-      <section class="articles">
+      <section class="comment">
             <h1><%= article.title %> <small>by <%= article.author.getFullName() %></small></h1>
             <p>
              <strong><%= moment(article.createdAt).calendar() %></strong>
@@ -8,36 +8,13 @@
             <hr />
       </section>
         
-<!-- DELETE    -->
-<!-- Delete Article -->
-<div class="login-page">
-  <div class="form">
-    <ul>
-      <li><%= article.name %>  <%= article.type %>
-        <a href="/articles/<%= article.id %>"><%= article.title %></a>
-          <form method="POST" action="/articles/<%= article.id %>/?_method=DELETE">
-              <input type="submit" value="Delete">
-          </form>
-      </li>
-    </ul> 
-      <button type="button"><a href="/">&larr; Back Home</a></button>
-  </div>
-</div>
-
-
-
-
-
-<% article.comments.forEach(comment => { %>
-  <div class="well">
-    <p><%= comment.content %></p>
-  </div>
-<% }) %>  
-
-
-
-
-
+<section id="comment">
+  <% article.comments.forEach(comment => { %>
+    <div class="well">
+      <p><%= comment.content %></p>
+    </div>
+  <% }) %>  
+</section>
 
 <h1> Create a Comment ! </h1>
 
@@ -60,14 +37,6 @@
     </form>
   </div>
 </div>
-
-
-
-
-
-
-
-
 
 
 
