@@ -107,6 +107,12 @@ Authentication (4)
 
 > Drag-n-drop image from your file system to the editor to paste it!
 
+## Home Hover 
+Map increases in size on hover
+Form buttons change color on hover
+Click on Space picture to go to full view
+Footer links work and links increases in size on hover
+
 
 
 ### Sample Pictures 
